@@ -180,7 +180,7 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
       initialContent: _initialContent,
       initialSourceType: SourceType.html,
       height: _currentHeight,
-      ignoreAllGestures: false,
+      ignoreAllGestures: !isEnabled,
       width: width,
       onWebViewCreated: (controller) => _webviewController = controller,
       onPageFinished: (src) {
@@ -504,6 +504,7 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
          display:none;
         }     
         #scrolling-container {  
+          min-height: ${widget.minHeight}px !important;
           min-height: ${widget.minHeight}px !important;
           overflow-y: scroll  !important;
           -webkit-user-select: text !important;
